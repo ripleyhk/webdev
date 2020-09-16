@@ -10,14 +10,100 @@
     <meta name="keywords" content="blog, web development, cs347, jmu, james
       madison university">
     <meta name="author" content="Hannah Ripley">
+    <link href="https://fonts.googleapis.com/css2?family=Roboto&display=swap" rel="stylesheet">
+    <style>
+      nav {
+        padding-left: 5%;
+        
+        display: flex;
+        flex-direction: row;
+        
+
+        font-weight: bold;
+        background-color: #8F2164;
+      }
+      .nav-link {
+        color: white;
+        margin-left: 5%;
+        font-size: large;
+        text-decoration: none;
+        display: flex;
+        flex-flow: column;
+        justify-content: center;
+      }
+      .posts {
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+        height: 50vh;
+        width: 90vh;
+        margin-top: 2%;
+        
+      }
+      .post {
+        background-color: #572179;
+        font-size: xxx-large;
+        color: white;
+
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-content: center;
+
+        padding: 5%;
+        border-radius: 25px;
+        height: 12vh;
+        white-space: nowrap;
+      }
+      .post:hover {
+        background-color: #902fcc;
+      }
+      .ad {
+        margin-right: 10vh;
+        width: auto;
+        border: dotted darkgrey;
+        height: 250px;
+      }
+
+      body {
+        margin: 0;
+        font-family: 'Roboto', sans-serif;
+        background-color: #f0deff;
+        cursor: url(/cursors/cur1089.cur), default;
+      }
+      main {
+        margin: 2%;
+        display: flex;
+        flex-direction: row;
+        justify-content: space-between;
+      }
+      h1 {
+        color: white;
+        font-size: x-large;
+      }
+      h2 {
+        font-size: xx-large;
+        color: #28111F;
+      }
+      a {
+        text-decoration: none;
+        color: white;
+      }
+
+    </style>
   </head>
   <body>
-    <h1>Hannah's Blog</h1>
+    <nav>
+      <a href="/"><h1>Hannah's Blog</h1></a>
+      <a class="nav-link" href="/blog-posts/09-18-2020.html">Newest</a>
+      <a class="nav-link" href="/blog-posts/09-11-2020.html">Oldest</a>
+    </nav>
     <main>
-      <ul>
-        <li><a href="blog-posts/09-11-2020.html">September 11th, 2020</a></li>
-        <li><a href="blog-posts/09-18-2020.html">September 18th, 2020</a></li>
-      </ul>
+      <div class="posts">
+        <a class="post" href="blog-posts/09-11-2020.html">September 11th, 2020</a></li>
+        <a class="post" href="blog-posts/09-18-2020.html">September 18th, 2020</a></li>
+      </div>
+      <img class= "ad" src="/images/ad-2.png">
     </main>
   </body>
 </html>
