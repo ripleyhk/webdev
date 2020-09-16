@@ -29,45 +29,66 @@
         background-color: #fffbf7;
         overflow-wrap: normal; 
       }
+      .important {
+        color: #FF9208;
+        font-weight:bold;
+      }
+      .nav-link {
+        color: white;
+        text-decoration: none;
+      }
       h1{
         color: #F20857;
+        padding-left: 2%;
       }
       p {
-        color: #FF9208;
         width: 75%;
       }
       a {
         color: #2FCF82;
       }
-      li {
-        color:#FFA83A;
-      }
-
-      body {
-        background-color: #FFF6EE;
+      nav {
         padding-left: 5%;
-        padding-bottom: 5%;
+        padding-top: 1%;
+        padding-bottom: 1%;
+        
+        display: flex;
+        flex-direction: row;
+        justify-content: space-evenly;
+
+        font-weight: bold;
+        background-color: #73CCA1;
+      }
+      body {
+        margin: 0;
+        background-color: #FFF6EE;
         font-family: Arial, Helvetica, sans-serif;
       }
-
+      main {
+        padding-left: 5%;
+        padding-bottom: 5%;
+      }
+      
 
     </style>
   </head>
   <body>
     <nav>
-      <a href="/">Home</a>
+      <a class="nav-link" href="/">Home</a>
+      <a class="nav-link" href="/blog-posts/09-11-2020.html">Prev</a>
     </nav>
     <h1>Blog Post - September 18th, 2020</h1>
     <main>
       <p>
       This week, I watched a YouTube video from the channel Real Website Hints titled
       <a href="https://www.youtube.com/watch?v=j2G1IUpRiPY">"5 Website Design Hints. Web Design Tutorial For Beginners.</a>"
-      with tips on how to create professional-looking websites as an amateur developer. 
+      with tips on how to create professional-looking websites as an amateur developer: 
       </p>
-      <iframe width="420" height="315"
-      src="https://www.youtube.com/watch?v=j2G1IUpRiPY">
+      <iframe width="560" height="315" src="https://www.youtube.com/embed/j2G1IUpRiPY" 
+      frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; 
+      picture-in-picture" allowfullscreen>
       </iframe>
-      <p>
+      <p class="important">
         The channel's tips were as follows:
       </p>
       <ol>
@@ -90,7 +111,7 @@
       the colors. If two colors are similar shades, the user will mentally associate them. If two colors are on 
       opposite positions on the color wheel, the user will mentally separate them.
       </p>
-      <p>
+      <p class="important">
       Consider the following code:
       </p>
       <pre class="code">
@@ -107,7 +128,7 @@
   &lt;li style=&quot;color: blue&quot;&gt;Hux&lt;/li&gt;
 &lt;/ul&gt;
       </pre>
-      <p>Which produces: </p>
+      <p class="important">Which produces: </p>
       <div class="example">
         <p style="color: blue">Rey is friends with:</p>
         <ul>
