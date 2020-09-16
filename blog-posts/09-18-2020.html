@@ -1,0 +1,144 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <title>Blog Post - September 11th, 2020</title>
+    <link rel="icon" href="/images/pink-bubble.png" type="image/png"
+      sizes="16x16">
+    <meta charset="utc-8">
+    <meta name="description" content="Hannah Ripley's blog for CS347 (Web
+      Development)">
+    <meta name="keywords" content="blog, web development, cs347, jmu, james
+      madison university">
+    <meta name="author" content="Hannah Ripley">
+    <style>
+      .code {
+        width: 75vh;
+        padding-top: 2%;
+        padding-left: 5%;
+        padding-right: 15%;
+        color: #303030;
+        background-color: #fffbf7;
+        overflow-wrap: normal; 
+      }
+      .example {
+        width: 75vh;
+        padding-top: 1%;
+        padding-bottom: 1%;
+        padding-left: 5%;
+        padding-right: 15%;
+        background-color: #fffbf7;
+        overflow-wrap: normal; 
+      }
+      h1{
+        color: #F20857;
+      }
+      p {
+        color: #FF9208;
+        width: 75%;
+      }
+      a {
+        color: #2FCF82;
+      }
+      li {
+        color:#FFA83A;
+      }
+
+      body {
+        background-color: #FFF6EE;
+        padding-left: 5%;
+        padding-bottom: 5%;
+        font-family: Arial, Helvetica, sans-serif;
+      }
+
+
+    </style>
+  </head>
+  <body>
+    <nav>
+      <a href="/">Home</a>
+    </nav>
+    <h1>Blog Post - September 18th, 2020</h1>
+    <main>
+      <p>
+      This week, I watched a YouTube video from the channel Real Website Hints titled
+      <a href="https://www.youtube.com/watch?v=j2G1IUpRiPY">"5 Website Design Hints. Web Design Tutorial For Beginners.</a>"
+      with tips on how to create professional-looking websites as an amateur developer. 
+      </p>
+      <iframe width="420" height="315"
+      src="https://www.youtube.com/watch?v=j2G1IUpRiPY">
+      </iframe>
+      <p>
+        The channel's tips were as follows:
+      </p>
+      <ol>
+        <li>Create a color palette.</li>
+        <li>Use great looking images.</li>
+        <li>Add extra space around elements.</li>
+        <li>Be decisive.</li>
+        <li>Remember your mobile viewers.</li>
+      </ol>
+      <p>
+      While much of the content of Web Development focuses on how to use particular elements and attributes,
+      I enjoyed the artistic element that the video introduced. Not only do web pages need to be functional
+      and accessible; they should also be aesthetically pleasing with logical arrangement. While a web page
+      developed with basic html elements may be physically readable, appropriate web design addresses readability
+      and user engagement on a psychological level. 
+      </p>
+      <p>
+      Perhaps two colors may be different <i>enough</i> that a 
+      user can distinguish them, but the developer should consider the psychological relationship between
+      the colors. If two colors are similar shades, the user will mentally associate them. If two colors are on 
+      opposite positions on the color wheel, the user will mentally separate them.
+      </p>
+      <p>
+      Consider the following code:
+      </p>
+      <pre class="code">
+&lt;p style=&quot;color: blue&quot;&gt;Rey is friends with:&lt;/p&gt;
+&lt;ul&gt;
+  &lt;li style=&quot;color: blue&quot;&gt;Finn&lt;/li&gt;
+  &lt;li style=&quot;color: blue&quot;&gt;Poe&lt;/li&gt;
+  &lt;li style=&quot;color: red&quot;&gt;Ben&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p style=&quot;color: red&quot;&gt;Snoke is friends with:&lt;/p&gt;
+&lt;ul&gt;
+  &lt;li style=&quot;color: red&quot;&gt;Phasma&lt;/li&gt;
+  &lt;li style=&quot;color: red&quot;&gt;Palpatine&lt;/li&gt;
+  &lt;li style=&quot;color: blue&quot;&gt;Hux&lt;/li&gt;
+&lt;/ul&gt;
+      </pre>
+      <p>Which produces: </p>
+      <div class="example">
+        <p style="color: blue">Rey is friends with:</p>
+        <ul>
+          <li style="color: blue">Finn</li>
+          <li style="color: blue">Poe</li>
+          <li style="color: red">Ben</li>
+        </ul>
+        <p style="color: red">Snoke is friends with:</p>
+        <ul>
+          <li style="color: red">Phasma</li>
+          <li style="color: red">Palpatine</li>
+          <li style="color: blue">Hux</li>
+        </ul>
+    </div>
+    <p>
+    The lists explictly declare that <span style="color: blue">Rey</span> is friends with <span style="color: blue">Finn</span>, <span style="color: blue">Poe</span>, 
+    and <span style="color: red">Ben</span> and that
+    <span style="color: red">Snoke</span> is friends with <span style="color: red">Phasma</span>, <span style="color: red">Palpatine</span>, and <span style="color: blue">Hux</span>; however, the colors suggest otherwise.  
+    Furthermore, the cultural context of the colors <span style="color: red">red</span> and <span style="color: blue">blue</span> suggest that <span style="color: blue">Rey and her friends </span>
+    are good while <span style="color: red">Snoke and his friends</span> are not. The color palette has significant implications
+    with psychological and cultural influences that the developer <i>must</i> keep in mind
+    when designing a web page.
+    </p>
+    <p>
+    Real Website Hints also provides a resource for beginner programmers who lack the aesthetic intuition
+    to create color palette: <a href="http://paletton.com/">Paletton</a>. Here, the user can select 
+    monochromatic, adjacent, triad, and tetrad color palettes. The website also provides a vision
+    stimulation option where developers can preview how their palettes would appear on desaturated 
+    devices and to users with various forms of color blindness. This is an excellent resource
+    to reference when creating accessible web pages!
+    </p>
+    </main>
+  </body>
+</html>
