@@ -15,7 +15,6 @@
     <link href="https://fonts.googleapis.com/css2?family=Roboto&display=swap" rel="stylesheet">
     <script defer src="/scripts/croak.js"></script>
 
-
     <style>
       nav {
         display: flex;
@@ -42,8 +41,8 @@
       }
       .posts {
         display: flex;
-        flex-direction: column;
-        justify-content: space-between;
+        flex-direction: row;
+        justify-content: space-evenly;
         flex-grow: 3;
 
         margin-top: 2%;
@@ -53,20 +52,22 @@
         display: flex;
         flex-direction: column;
         justify-content: center;
-        align-content: center;
+        text-align: center;
+        transition: transform 2s linear;
 
         padding: 5%;
-        height: 12vh;
+        height: 15vh;
+        width: 15vh;
 
         background-color: #572179;
         font-size: xxx-large;
         color: white;
         white-space: nowrap;
-        border-radius: 25px;
+        border-radius: 50%
       }
       .post:hover {
         background-color: #902fcc;
-        box-shadow: 10px 10px 10px #f0deff;
+        box-shadow: 10px 10px 10px #f0deff; 
       }
       .ad {
         flex-grow: 1;
@@ -121,8 +122,9 @@
     </nav>
     <main>
       <div class="posts">
-        <a class="post" href="blog-posts/09-11-2020.html">September 11th, 2020</a></li>
-        <a class="post" href="blog-posts/09-18-2020.html">September 18th, 2020</a></li>
+        <a class="post" href="blog-posts/09-11-2020.html">9/11</a></li>
+        <a class="post" href="blog-posts/09-18-2020.html">9/18</a></li>
+        <a class="post">TBD</a></li>
       </div>
       <img class= "ad" id="frog" src="/images/ad-2.png" alt="A cute frog chopping a carrot with a knife">
     </main>
