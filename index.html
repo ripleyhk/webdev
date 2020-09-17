@@ -4,32 +4,38 @@
     <title>Hannah's Blog</title>
     <link rel="icon" href="/images/pink-bubble.png" type="image/png"
       sizes="16x16">
+
     <meta charset="utc-8">
     <meta name="description" content="Hannah Ripley's blog for CS347 (Web
       Development)">
     <meta name="keywords" content="blog, web development, cs347, jmu, james
       madison university">
     <meta name="author" content="Hannah Ripley">
+
     <link href="https://fonts.googleapis.com/css2?family=Roboto&display=swap" rel="stylesheet">
+    <script defer src="/scripts/croak.js"></script>
+
+
     <style>
       nav {
-        padding-left: 5%;
-        
         display: flex;
         flex-direction: row;
-        
+
+        padding-left: 5%;
 
         font-weight: bold;
         background-color: #8F2164;
       }
       .nav-link {
-        color: white;
-        margin-left: 5%;
-        font-size: large;
-        text-decoration: none;
         display: flex;
         flex-flow: column;
         justify-content: center;
+
+        margin-left: 5%;
+
+        font-size: large;
+        color: white;
+        text-decoration: none;
       }
       .nav-link:hover {
         color: #f5428a;
@@ -38,25 +44,25 @@
         display: flex;
         flex-direction: column;
         justify-content: space-between;
+
+        margin-top: 2%;
         height: 50vh;
         width: 90vh;
-        margin-top: 2%;
-        
       }
       .post {
-        background-color: #572179;
-        font-size: xxx-large;
-        color: white;
-
         display: flex;
         flex-direction: column;
         justify-content: center;
         align-content: center;
 
         padding: 5%;
-        border-radius: 25px;
         height: 12vh;
+
+        background-color: #572179;
+        font-size: xxx-large;
+        color: white;
         white-space: nowrap;
+        border-radius: 25px;
       }
       .post:hover {
         background-color: #902fcc;
@@ -65,8 +71,9 @@
       .ad {
         margin-right: 10vh;
         width: auto;
+        height: 50vh;
+
         border: dotted darkgrey;
-        height: 250px;
       }
 
       body {
@@ -95,7 +102,7 @@
       a {
         text-decoration: none;
         color: white;
-        cursor: url(/blog/cursors/white.cur), pointer;
+        cursor: url(/cursors/white.cur), pointer;
       }
 
     </style>
@@ -111,7 +118,7 @@
         <a class="post" href="blog-posts/09-11-2020.html">September 11th, 2020</a></li>
         <a class="post" href="blog-posts/09-18-2020.html">September 18th, 2020</a></li>
       </div>
-      <img class= "ad" src="/images/ad-2.png">
+      <a href=""><img class= "ad" id="frog" src="/images/ad-2.png"></a>
     </main>
   </body>
 </html>
