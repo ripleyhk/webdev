@@ -42,7 +42,8 @@
       .posts {
         display: flex;
         flex-direction: row;
-        justify-content: space-evenly;
+        flex-wrap: wrap;
+        justify-content: flex-start;
         flex-grow: 3;
 
         margin-top: 2%;
@@ -56,6 +57,7 @@
         transition: transform 2s linear;
 
         padding: 5%;
+        margin: 1%;
         height: 15vh;
         width: 15vh;
 
@@ -68,6 +70,24 @@
       .post:hover {
         background-color: #902fcc;
         box-shadow: 10px 10px 10px #f0deff; 
+      }
+      .tbd {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        text-align: center;
+        transition: transform 2s linear;
+
+        padding: 5%;
+        margin: 1%;
+        height: 15vh;
+        width: 15vh;
+
+        background-color: #b8b8b8;
+        font-size: xxx-large;
+        color: white;
+        white-space: nowrap;
+        border-radius: 50%
       }
       .ad {
         flex-grow: 1;
@@ -123,7 +143,12 @@
       <div class="posts">
         <a class="post" href="blog-posts/09-11-2020.html">9/11</a></li>
         <a class="post" href="blog-posts/09-18-2020.html">9/18</a></li>
-        <a class="post">TBD</a></li>
+        <a class="tbd">TBD</a></li>
+        <a class="tbd">TBD</a></li>
+        <a class="tbd">TBD</a></li>
+        <a class="tbd">TBD</a></li>
+        <a class="tbd">TBD</a></li>
+        <a class="tbd">TBD</a></li>
       </div>
       <img class= "ad" id="frog" src="/images/ad-2.png" alt="A cute frog chopping a carrot with a knife">
     </main>
