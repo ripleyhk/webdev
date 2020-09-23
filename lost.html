@@ -20,36 +20,62 @@
         margin: 0;
         font-family: 'Roboto', sans-serif;
         font-size: larger;
+        background: url(/images/stars.jpg);
         background-color: black;
         color: white;
         cursor: url(/cursors/white.cur), default;
-        transition: background 500ms linear;
       }
-      .night {
-        background: url(/images/stars.jpg);
+      .curtain {
+        background-color: black;
+        width: 100%;
+        height: 100%;
+        opacity: 1;
+        z-index: -1;
+        transition: opacity 5.0s ease-in-out;
+        position: fixed;
+      }
+      .open-curtain {
+        opacity: 0;
       }
       .clear {
         display: none;
       }
       main {
-        margin: 2%;
         display: flex;
+        justify-content: center;
+        height: 100vh;
+        width: 100vw;
+        
+      }
+      p {
+        font-size: 5vw;
+        color: white;
+        margin: 0;
+        width: fit;
+      }
+      .choice {
+        background-color: rgba(0,0,0,0.95);
+        width: fit-content;
+        height: fit-content;
+        margin: 5%;
+        padding: 4%;
+        border-radius: 2px;
         align-content: center;
         justify-content: center;
+        flex-grow: 1;
       }
       ul {
-        background-color: black;
-        width: fit-content;
-        padding-bottom: 10vh;
-        padding-left: 5vw;
-        padding-right: 10vw;
-        opacity: 0.75;
-        border-radius: 5px;
+        padding: 0;
+        margin: 0;
+        margin-left: 5vw;
         list-style-type: none;
+        font-size: 4vw;
       }
       li {
         padding: 2%;
-        transition: color 1s linear;
+        width: fit-content;
+        color: #b5b5b5;
+        transition: color 0.5s linear;
       }
       li:hover {
         color: #ffcc00;
@@ -57,7 +83,8 @@
       }
       a {
         text-decoration: none;
-        color: white;
+        font-size: 4vw;
+        color: #b5b5b5;
         transition: color 1s linear;
       }
       a:hover {
@@ -67,12 +94,15 @@
     </style>
   </head>
   <body>
+    <div class="curtain"></div>
     <main>
-      <ul class="choice">
+      <div class="choice">
         <p>This place isn't ready for you yet.<p/>
-        <li class="option" id="stay">It's ready enough.</li>
-        <li class="option" id="leave"><a href="/index.html">I'll be back.</a></li>
-      </ul>
+        <ul>
+          <li class="option" id="stay">It's ready enough.</li>
+          <li class="option" id="leave"><a href="/index.html">I'll be back.</a></li>
+        </ul>
+      </div>
     </main>
   </body>
 </html>
