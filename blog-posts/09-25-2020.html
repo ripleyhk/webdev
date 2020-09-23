@@ -12,15 +12,18 @@
       madison university">
     <meta name="author" content="Hannah Ripley">
 
-    <link href="https://fonts.googleapis.com/css2?family=Roboto&display=swap" rel="stylesheet">
-    <link href="https://fonts.googleapis.com/css2?family=Grandstander:ital,wght@0,100;0,400;0,700;0,900;1,400&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Roboto&display=swap"
+      rel="stylesheet">
+    <link
+      href="https://fonts.googleapis.com/css2?family=Grandstander:ital,wght@0,100;0,400;0,700;0,900;1,400&display=swap"
+      rel="stylesheet">
 
     <style>
       nav {
         display: flex;
         flex-direction: row;
 
-        padding-left: 5%;
+        padding: 1%;
         margin: 0;
 
         font-weight: bold;
@@ -41,74 +44,25 @@
       .nav-link:hover {
         color: #f5428a;
       }
-      .posts {
-        display: flex;
-        flex-direction: row;
-        flex-wrap: wrap;
-        justify-content: flex-start;
-        flex-grow: 3;
-
-        height: 50vh;
-
-        font-size: xxx-large;
-        font-family: 'Grandstander', cursive;
-      }
-      .post {
-        display: flex;
-        flex-direction: column;
-        justify-content: center;
-        text-align: center;
-        transition: transform 2s linear;
-
-        padding: 5%;
-        margin: 1%;
-        height: 15vh;
-        width: 15vh;
-
-        background-color: #572179;
+      .code {
+        padding: 1%;
+        border-radius: 1px;
+        overflow-x: auto;
+        white-space: pre-wrap;
+        white-space: -moz-pre-wrap;
+        white-space: -pre-wrap;
+        white-space: -o-pre-wrap;
+        word-wrap: break-word;
+        width: 60%;
+        background-color: #de1278;
+        opacity: 0.5;
         color: white;
-        white-space: nowrap;
-        border-radius: 50%
       }
-      .post:hover {
-        background-color: #902fcc;
-        box-shadow: 10px 10px 10px #f0deff; 
-      }
-      .tbd {
-        display: flex;
-        flex-direction: column;
-        justify-content: center;
-        text-align: center;
-        transition: transform 2s linear;
-
-        padding: 5%;
-        margin: 1%;
-        height: 15vh;
-        width: 15vh;
-
-        background-color: #b8b8b8;
-        font-size: xxx-large;
-        color: #ce3771;
-        white-space: nowrap;
-        border-radius: 50%
-      }
-      .ad {
-        flex-grow: 0;
-        max-height: 40vh;
-        margin: 5vh;
-
-        border: dotted darkgrey;
-        cursor: url(/cursors/white.cur), pointer;
-      }
-      .ad:hover {
-        border: dotted #38a125;
-      }
-
       body {
         margin: 0;
         font-family: 'Roboto', sans-serif;
         background-image: url(/images/pink-wall.png);
-        background-size: 100%;
+        background-size: 100% 100%;
         background-attachment: fixed;
         background-repeat: no-repeat;
         background-color: #f0deff;
@@ -116,14 +70,18 @@
       }
       main {
         margin: 2%;
-        
-        display: flex;
+        padding: 2%;
+        width: 80vw;
+        min-height: 75vh;
+        background-color: white;
+        opacity: 0.75;
+        border: #de1278 groove;
+        border-radius: 5px;
         flex-direction: row;
         justify-content: space-between;
       }
       h1 {
-        color: white;
-        font-size: x-large;
+        color: #8F2164;
       }
       h2 {
         font-size: xx-large;
@@ -131,21 +89,124 @@
       }
       a {
         text-decoration: none;
-        color: white;
+        color: #f5428a;
         cursor: url(/cursors/white.cur), pointer;
       }
+      b {
+        color: #661065;
+      }
+      .warning:before { 
+        content: "Warning: ";
+        color: red;
+      }
+      .warning2 { 
+        color: red; 
+        display: inline;
+      }
+      p {
+        width: 90%;
+      }
+      .whisper {
+        font-size: smaller;
+        color: lightpink;
+      }
+      .whisper:before {
+        content: "*";
+      }
+      
 
     </style>
   </head>
   <body>
     <nav>
-      <a href="/index.html"><h1>Hannah's Blog</h1></a>
-      <a class="nav-link" href="/blog-posts/09-25-2020.html">Newest</a>
-      <a class="nav-link" href="/blog-posts/09-11-2020.html">Oldest</a>
-    </nav>
+      <a class="nav-link" href="/index.html">Home</h1></a>
+    <a class="nav-link" href="/blog-posts/09-25-2020.html">Next</a>
+    <a class="nav-link" href="/blog-posts/09-18-2020.html">Prev</a>
+  </nav>
+  <main>
     <h1>Blog Post - September 18th, 2020</h1>
-    <main>
-
-    </main>
-  </body>
+    <p>I'll admit it: I love a good article with tips and tricks.
+      I like throwing weird stuff together and seeing what <i>won't </i>
+      frustrate users and clients away from my websites.
+      That's why this week, I read <a href="https://www.webdesignerdepot.com/2016/10/20-essential-css-tricks-every-designer-should-know/">"20 Essential CSS Tricks Every Designer Should Know"</a>
+      by James George from Web Designer Depot. 
+    </p>
+    <p>Did you know you can use the follow code to center text?</p>
+    <pre class="code">
+p { text-align: center; }
+    </pre>
+    <p>I was <i>shocked</i> by this revelation. How had I gone so long in my web
+    developer career without such an innovative trick?</p>
+    <p>
+      Of course, the article wasn't a <i>complete</i> waste of my time. 
+      Things started to heat up around <b>Trick 13. :before</b>.
+      During my time with this trick, I learned how to use the 
+      <b>:before</b> CSS selector to preface an element with formatted content.
+    </p>
+    <p>
+      This can be implemented like so:
+    </p>
+    <pre class="code">
+warning:before { content: "Warning: "; color: red; }
+    </pre>
+    <p>
+      And thus with just this HTML:
+    </p>
+    <pre class="code">
+&lt;h2 class="warning"&gt;Don't believe everything you read on the internet.&lt;/h2&gt;  
+    </pre>
+    <p>We can achieve the following:</p>
+    <h2 class="warning">Don't believe everything you read on the internet.</h2> 
+    <p>It's incredibly helpful for creating uniform messages with limited code duplication. 
+      Just consider the alternative:</p>
+    <pre class="code">
+.warning { color: red;}
+    </pre>
+    <p>Sure. The CSS is simple enough. But now in HTML, we have to type:</p>
+    <pre class="code">
+&lt;h2&gt;
+  &lt;span class=&quot;warning2&quot;&gt;Warning: &lt;/span&gt;
+  Don't believe everything you read on the internet.
+&lt;/h2&gt;
+    </pre>
+    <p>And of course. That's only for a single warning. Look how easy it is using <b>:before</b>:
+    <pre class="code">
+&lt;h2 class="warning"&gt;Don't believe everything you read on the internet.&lt;/h2&gt; 
+&lt;h2 class="warning"&gt;Vistors are &lt;i&gt;not&lt;/i&gt; required to wear a mask to enter the store.&lt;/h2&gt; 
+&lt;h2 class="warning"&gt;Vitamins are not FDA approved.&lt;/h2&gt; 
+&lt;h2 class="warning"&gt;Don't blink.&lt;/h2&gt; 
+    </pre>
+    <p>To produce:</p>
+    <h2 class="warning">Don't believe everything you read on the internet.</h2>
+    <h2 class="warning">Vistors are <i>not</i> required to wear a mask to enter the store</h2>
+    <h2 class="warning">Vitamins are not FDA approved.</h2>
+    <h2 class="warning">Don't blink.</h2>
+    <p>As opposed to:</p>
+    <pre class="code">
+&lt;h2&gt;
+  &lt;span class=&quot;warning2&quot;&gt;Warning: &lt;/span&gt;
+  Don't believe everything you read on the internet.
+&lt;/h2&gt;
+&lt;h2&gt;
+  &lt;span class=&quot;warning2&quot;&gt;Warning: &lt;/span&gt;
+  Vistors are &lt;i&gt;not&lt;/i&gt; required to wear a mask to enter the store&lt;/h2&gt;
+&lt;/h2&gt;
+&lt;h2&gt;
+  &lt;span class=&quot;warning2&quot;&gt;Warning: &lt;/span&gt;
+  Vitamins are not FDA approved.
+&lt;/h2&gt;
+&lt;h2&gt;
+  &lt;span class=&quot;warning2&quot;&gt;Warning: &lt;/span&gt;
+  Don't blink.
+&lt;/h2&gt;
+    </pre>
+    <p>Any opportunity for increased code elegance and decreased code 
+      duplication cuts down on the possible that the developer will make
+      a mistake. Which means we can cut down the number of places we have
+      to look to find the errors we will inevitably make while developing
+      our products.
+    </p>
+    <p class="whisper">Tricks 14 through 20 were also nifty.</p>
+  </main>
+</body>
 </html>
