@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <title>Somewhere?</title>
+    <link rel="icon" href="/images/pink-bubble.png" type="image/png"
+      sizes="16x16">
+
+    <meta charset="utc-8">
+    <meta name="description" content="Hannah Ripley's blog for CS347 (Web
+      Development)">
+    <meta name="keywords" content="blog, web development, cs347, jmu, james
+      madison university">
+    <meta name="author" content="Hannah Ripley">
+
+    <link href="https://fonts.googleapis.com/css2?family=Roboto&display=swap" rel="stylesheet">
+    <script defer src="/scripts/home.js"></script>
+
+    <style>
+      body {
+        margin: 0;
+        font-family: 'Roboto', sans-serif;
+        font-size: larger;
+        background-color: black;
+        color: white;
+        cursor: url(/cursors/white.cur), default;
+        transition: background 500ms linear;
+      }
+      .night {
+        background: url(/images/stars.jpg);
+      }
+      .clear {
+        display: none;
+      }
+      main {
+        margin: 2%;
+        display: flex;
+        align-content: center;
+        justify-content: center;
+      }
+      ul {
+        background-color: black;
+        width: fit-content;
+        padding-bottom: 10vh;
+        padding-left: 5vw;
+        padding-right: 10vw;
+        opacity: 0.75;
+        border-radius: 5px;
+        list-style-type: none;
+      }
+      li {
+        padding: 2%;
+        transition: color 1s linear;
+      }
+      li:hover {
+        color: #ffcc00;
+        cursor: pointer;
+      }
+
+    </style>
+  </head>
+  <body>
+    <main>
+      <ul class="choice">
+        <p>This place isn't ready for you yet.<p/>
+        <li class="option" id="stay">It's ready enough.</li>
+        <li class="option" id="leave"><a href="/"></a>I'll be back.</a></li>
+      </ul>
+    </main>
+  </body>
+</html>
