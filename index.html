@@ -69,11 +69,13 @@
         background-color: #572179;
         color: white;
         white-space: nowrap;
-        border-radius: 50%
+        border-radius: 50%;
+        transition: transform 3s linear;
       }
       .post:hover {
         background-color: #902fcc;
         box-shadow: 10px 10px 10px #f0deff; 
+        transform: rotate(360deg);
       }
       .tbd {
         display: flex;
@@ -111,7 +113,6 @@
         background-image: url(/images/pink-wall.png);
         background-size: 100%;
         background-attachment: fixed;
-        background-repeat: no-repeat;
         background-color: #f0deff;
         cursor: url(/cursors/white.cur), default;
       }
