@@ -1,0 +1,243 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <title>Blog Post - September 25th, 2020</title>
+    <link rel="icon" href="/images/pink-bubble.png" type="image/png"
+      sizes="16x16">
+
+    <meta charset="utc-8">
+    <meta name="description" content="Hannah Ripley's blog for CS347 (Web
+      Development)">
+    <meta name="keywords" content="blog, web development, cs347, jmu, james
+      madison university">
+    <meta name="author" content="Hannah Ripley">
+
+    <link href="https://fonts.googleapis.com/css2?family=Roboto&display=swap"
+      rel="stylesheet">
+    <link
+      href="https://fonts.googleapis.com/css2?family=Grandstander:ital,wght@0,100;0,400;0,700;0,900;1,400&display=swap"
+      rel="stylesheet">
+
+    <style>
+      nav {
+        display: flex;
+        flex-direction: row;
+
+        padding: 1%;
+        margin: 0;
+
+        font-weight: bold;
+        font-family: 'Roboto', sans-serif;
+        background-color: #8F2164;
+      }
+      .nav-link {
+        display: flex;
+        flex-flow: column;
+        justify-content: center;
+
+        margin-left: 5%;
+
+        font-size: large;
+        color: white;
+        text-decoration: none;
+      }
+      .nav-link:hover {
+        color: #f5428a;
+      }
+      .code {
+        padding: 1%;
+        border-radius: 1px;
+        overflow-x: auto;
+        white-space: pre-wrap;
+        white-space: -moz-pre-wrap;
+        white-space: -pre-wrap;
+        white-space: -o-pre-wrap;
+        word-wrap: break-word;
+        width: 65vw;
+        background-color: #de1278;
+        opacity: 0.5;
+        color: white;
+      }
+      body {
+        margin: 0;
+        font-family: 'Roboto', sans-serif;
+        background-image: url(/images/pink-wall.png);
+        background-size: 100% 100%;
+        background-attachment: fixed;
+        background-repeat: no-repeat;
+        background-color: #f0deff;
+        cursor: url(/cursors/white.cur), default;
+      }
+      main {
+        margin: 2%;
+        padding: 2%;
+        width: 80vw;
+        min-height: 75vh;
+        background-color: white;
+        opacity: 0.75;
+        border: #de1278 groove;
+        border-radius: 5px;
+        flex-direction: row;
+        justify-content: space-between;
+      }
+      h1 {
+        color: #8F2164;
+      }
+      h2 {
+        color: #cc2b8c;
+      }
+      h3 {
+         color: #661065;
+         margin-bottom: 0;
+      }
+      a {
+        text-decoration: none;
+        color: #f5428a;
+        cursor: url(/cursors/white.cur), pointer;
+      }
+      a:hover {
+        color: #cf115d;
+      }
+      b {
+        color: #661065;
+      }
+      p {
+        width: 90%;
+      }
+      ul {
+         width: 75%;
+      }
+      li {
+         margin: 2%;
+      }
+      .whisper {
+        font-size: smaller;
+        color: lightpink;
+      }
+      .whisper:before {
+        content: "*";
+      }
+      .rating {
+         font-size: 1.0em;
+         font-style: italic;
+         color: #cc2b8c;
+      }
+      .rating-stars {
+         padding: 0;
+         font-style: normal;
+         font-size: 2em;
+         color: goldenrod;
+         font-weight: bold;
+      }
+      .quote {
+         color: #cc2b8c;
+      }
+      
+
+    </style>
+  </head>
+  <body>
+    <nav>
+      <a class="nav-link" href="/index.html">Home</h1></a>
+    <a class="nav-link" href="/lost.html">Next</a>
+    <a class="nav-link" href="/blog-posts/09-18-2020.html">Prev</a>
+  </nav>
+  <main>
+      <h1>Blog Post - October 2nd, 2020</h1>
+      <p>As we move further toward the JavaScript portion of the class,
+         I've been trying to prepare myself with extra resources. Of course,
+         I've had to use JavaScript for work projects in the past, and my
+         boss kindly let me add the hours I spent completing tutorials and reading
+         <i>For Dummies</i> books to my timesheet. However, I'm not sure I would call
+         my JavaScript code especially efficient or elegant (or god forbid: eloquent). 
+         Curse the programmer mentality of googling statements and methods(? Are they even called methods
+         in JavaScript? I don't know.) without <i>actually understanding what's going on</i>. 
+         This week, I'm learning how to write JavaScript that makes me look like a 
+         human with 85% of a Computer Science degree. 
+      </p>
+      <p>My reading this week was 
+         <a href="https://medium.com/@bretcameron/12-javascript-tricks-you-wont-find-in-most-tutorials-a9c9331f169d">
+            "11 JavaScript Tricks You Won't Find in Most Tutorials"</a>
+         by Bret Cameron of Medium.com. 
+      </p> 
+      <p>
+         Bret Cameron learned how to write good JavaScript by looking at 
+         what other people we doing right and imitating it. He collected his 
+         favorite tricks and compiled the best 11 into this list. These are 
+         primarily for the amateur JavaScript developer, and thus, I read
+         the list very carefully and intently. 
+      </p>
+      <p>I have provided ratings to  
+         reflect on how effectively I believe a green JS dev could implement them
+         (<i>and</i> to add a little color to this blog post). All ratings are out of 5 stars.
+      </p>
+      <h2>1. Filter Unique Values</h2>
+      <p class = "rating"><span class="rating-stars">&#9733;&#9733;&#9733;&#9733;&#9734;</span> <br>
+         Very easy, simple, and concise. I can imagine many useful applications.
+         However, it leaves something to be desired. I wish there was any set theory.
+      </p>
+      <p>Cameron starts off the list strong with a little array modification.
+         We can very easily remove duplicate values from an array
+         using Sets. Here is a brief example:
+      </p>
+      <pre class="code">
+const array = [1, 1, 2, 3, 5, 5, 1]
+const uniqueArray = [...new Set(array)];
+console.log(uniqueArray); // Result: [1, 2, 3, 5]
+      </pre>
+      <h2>9. Truncate an Array</h2>
+      <p class="whisper">Tricks 2-8 were very useful but also just JavaScript fundementals.</p>
+      <p class = "rating"><span class="rating-stars">&#9733;&#9733;&#9733;&#9733;&#9733;</span> <br>
+         Elegant, concise, and insightful. Displays genuine knowledge of computing. Clear examples. 
+         I'm sure I will use this tip often in the future.
+      </p>
+      <p>Unlike a lot of JavaScript "tricks" I've seen, this one actually takes runtime
+         into account. Cameron compared three different methods of removing elements from
+         an array. I will describe them in decreasing order of runtime:
+      </p>
+      <h3>Use the splice method:</h3>
+      <p>A developer <i>could</i> very easily use the splice method
+         to remove elements starting at the 4th index like so:</p>
+      <pre class="code">
+let array = [0, 1, 2, 3, 4, 5, 6, 7, 8, 9];
+array.splice(4, array.length);
+console.log(array); // Result: [0, 1, 2, 3]
+      </pre>
+      <h3>Redefine the length:</h3>
+      <p>But we could merely redefine the length for a faster performance:</p>
+      <pre class="code">
+let array = [0, 1, 2, 3, 4, 5, 6, 7, 8, 9];
+array.length = 4;
+console.log(array); // Result: [0, 1, 2, 3]
+      </pre>
+      <h3>Use the slice method:</h3>
+      <p>Or even better, we can use the slice method:</p>
+      <pre class="code">
+let array = [0, 1, 2, 3, 4, 5, 6, 7, 8, 9];
+array.slice(0, 4);
+console.log(array); // Result: [0, 1, 2, 3]
+      </pre>
+      <p>All three solutions are relatively elegant and very concise.
+         I personally prefer the slice method, not only because it has the best runtime
+         but also because the method seems more intuitive and reliable.
+      </p>
+      <p>
+         Which option a developer chooses should depend on both the runtime <i>and</i> the
+         context of their array operation: 
+         <ul>
+         <li><b>splice</b> would be more appropriate
+         for removing a particular number of items starting at an index. </li>
+         <li><b>length</b> would be
+         better for maintaining a particular number of items at the beginning of an array.</li> 
+         <li><b>slice</b>
+         is the best option for maintaining a subsection of the array.</li>
+         </ul>
+         
+      <p> As Professor Oak says, <span class="quote">"There's a time and place for everything."</span>
+      </p>
+      <p class="whisper">Tip 10 was the same but backwards, and Tip 11 was about JSONs, which
+         I do not and refuse to understand.
+      </p>
+   </main>
+</body>
+</html>
