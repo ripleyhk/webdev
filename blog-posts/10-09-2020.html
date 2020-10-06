@@ -1,0 +1,267 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <title>Blog Post - October 9th, 2020</title>
+    <link rel="icon" href="/images/pink-bubble.png" type="image/png"
+      sizes="16x16">
+
+    <meta charset="utc-8">
+    <meta name="description" content="Hannah Ripley's blog for CS347 (Web
+      Development)">
+    <meta name="keywords" content="blog, web development, cs347, jmu, james
+      madison university">
+    <meta name="author" content="Hannah Ripley">
+
+    <link href="https://fonts.googleapis.com/css2?family=Roboto&display=swap"
+      rel="stylesheet">
+    <link
+      href="https://fonts.googleapis.com/css2?family=Grandstander:ital,wght@0,100;0,400;0,700;0,900;1,400&display=swap"
+      rel="stylesheet">
+
+    <style>
+      nav {
+        position: sticky;
+        top: 0;
+        display: flex;
+        flex-direction: row;
+
+        padding: 1%;
+        margin: 0;
+        z-index: 1000;
+
+        font-weight: bold;
+        font-family: 'Roboto', sans-serif;
+        background-color: #8F2164;
+      }
+      .nav-link {
+        display: flex;
+        flex-flow: column;
+        justify-content: center;
+
+        margin-left: 5%;
+
+        font-size: large;
+        color: white;
+        text-decoration: none;
+      }
+      .nav-link:hover {
+        color: #f5428a;
+      }
+      .code {
+        padding: 1%;
+        border-radius: 1px;
+        overflow-x: auto;
+        white-space: pre-wrap;
+        white-space: -moz-pre-wrap;
+        white-space: -pre-wrap;
+        white-space: -o-pre-wrap;
+        word-wrap: break-word;
+        width: 65vw;
+        background-color: #de1278;
+        opacity: 0.5;
+        color: white;
+      }
+      body {
+        margin: 0;
+        font-family: 'Roboto', sans-serif;
+        background-image: url(/images/pink-wall.png);
+        background-size: 100% 100%;
+        background-attachment: fixed;
+        background-repeat: no-repeat;
+        background-color: #f0deff;
+        cursor: url(/cursors/white.cur), default;
+      }
+      main {
+        margin: 2%;
+        padding: 2%;
+        width: 80vw;
+        min-height: 75vh;
+        background-color: white;
+        opacity: 0.75;
+        border: #de1278 groove;
+        border-radius: 5px;
+        flex-direction: row;
+        justify-content: space-between;
+      }
+      h1 {
+        color: #8F2164;
+      }
+      h2 {
+        color: #cc2b8c;
+      }
+      h3 {
+         color: #661065;
+         margin-bottom: 0;
+      }
+      a {
+        text-decoration: none;
+        color: #f5428a;
+        cursor: url(/cursors/white.cur), pointer;
+      }
+      a:hover {
+        color: #cf115d;
+      }
+      b {
+        color: #661065;
+      }
+      p {
+        width: 90%;
+      }
+      ul, ol {
+         width: 75%;
+      }
+      li {
+         margin: 2%;
+         color:  #661065;
+      }
+      .whisper {
+        font-size: smaller;
+        color: lightpink;
+      }
+      .whisper:before {
+        content: "*";
+      }
+      .rating {
+         font-size: 1.0em;
+         font-style: italic;
+         color: #cc2b8c;
+      }
+      .rating-stars {
+         padding: 0;
+         font-style: normal;
+         font-size: 2em;
+         color: goldenrod;
+         font-weight: bold;
+      }
+      .quote {
+         color: #cc2b8c;
+      }
+      
+      
+
+    </style>
+  </head>
+  <body>
+    <nav>
+      <a class="nav-link" href="/index.html">Home</h1></a>
+    <a class="nav-link" href="/lost.html">Next</a>
+    <a class="nav-link" href="/blog-posts/10-01-2020.html">Prev</a>
+  </nav>
+  <main>
+      <h1>Blog Post - October 9th, 2020</h1>
+      <p>This week, I learned all about Object-Oriented Programming in Javascript via <br>
+         <a href="https://css-tricks.com/the-flavors-of-object-oriented-programming-in-javascript/">
+         "The Flavors of Object-Oriented Programming (in JavaScript)"</a>, an article written
+         by Zell Liew for CSS-Tricks.
+      </p>
+      <p>Liew breaks Javascript Object-Oriented Programming down into 4 approaches: </p>
+      <ol>
+         <li>Using Constructor functions</li>
+         <li>Using Classes</li>
+         <li>Using Objects linking to other objects (OLOO)</li>
+         <li>Using Factory functions</li>
+      </ol>
+      <p>In order to help programmers make informed decisions on which approach to take,
+      Liew also compares the approaches in the following areas:</p>
+      <ol>
+         <li>Inheritance</li>
+         <li>Encapsulation</li>
+         <li>this</li>
+         <li>Event listeners</li>
+      </ol>
+      <h2>Terminology</h2>
+      <p>Liew defines several useful terms:</p>
+      <ul>
+         <li><b>Object-Oriented Programming</b> &mdash; a way of writing code that allows you to create different objects from a common object</li>
+         <li><b>Instance</b> &mdash; an object created from the common object, with its own properties</li>
+         <li><b>Inheritance</b> &mdash; structuring code to have multiple levels of blueprints</li>
+         <li><b>Encapsulation</b> &mdash; hiding certain pieces of information within the object so they’re not accessible</li>
+      </ul>
+      <h2>Constructor functions</h2>
+      <p>Constructors are functions that contain a this keyword. They allow the programmer
+         to store and access values for an instance. They can be called in JavaScript using the
+         <b>new</b> keyword. 
+      </p>
+      <p>Here is a JavaScript constructor: </p>
+      <pre class="code">
+function Human (firstName, lastName) {
+  this.firstName = firstName
+  this.lastName = lastName
+}
+      </pre>
+      <p>And here is a new Human instance: </p>
+      <pre class="code">
+const zell = new Human('Zell', 'Liew')
+console.log(zell.firstName) // Zell
+console.log(zell.lastName) // Liew
+      </pre>
+      <h2>Classes</h2>
+      <p>Liew claims that classes are an easier way to create constructors. 
+      </p>
+      <p>
+         Here is what a Human class would look like in JavaScript: 
+      </p>
+      <pre class="code">
+class Human {
+  constructor(firstName, lastName) {
+    this.firstName = firstName
+    this.lastName = lastName
+  }
+}
+      </pre>
+      <p>The constructor may or may not be need to set firstName and lastName,
+         depending on Human's inheritance. Objects can be instantialized the same
+         with classes as they were with constructors. 
+      </p>
+      <h2>Objects Linking to Other Objects</h2>
+      <p>In OLOO, blueprints are defined like normal objects. Then, a method
+         can be used to inialize the instance. 
+      </p>
+      <p>Here is a Human OLOO:</p>
+      <pre class="code">
+const Human = {
+  init (firstName, lastName ) {
+    this.firstName = firstName
+    this.lastName = lastName
+  }
+}
+      </pre>
+      <p>The <b>Object.create</b> method is called to create the object.
+      Then, the object's method is called to initalize its values.</p>
+      <p>This can be done like so:</p>
+      <pre class="code">
+const chris = Object.create(Human)
+chris.init('Chris', 'Coyier')
+
+console.log(chris.firstName) // Chris
+console.log(chris.lastName) // Coyier
+      </pre>
+      <h2>Factory Functions</h2>
+      <p>Factory functions are functions that return an object.</p>
+      <p>Here is a Human factory function:</p>
+      <pre class="code">
+function Human (firstName, lastName) {
+  return {
+    firstName,
+    lastName
+  }
+}
+      </pre>
+      <p>Factory functions do not require the <b>new</b> keyword.</p>
+      <h2>Conclusion</h2>
+      <p>Liew reached the following conclusions (these are arguably simplistic, but I'm not
+         especially inclined to argue):
+      </p>
+      <ol>
+         <li>Classes are better than Constructors</li>
+         <li>OLOO is weird because of the Object.create part</li>
+         <li>Classes and Factory Functions are easiest to use</li>
+      </ol>
+      <p>Coming from a Java background, I'm inclined to agree with him. Classes
+         in JavaScript work very similarly to classes in Java. OLOO has unnecessary
+         complications. Factory functions are wonderful if you need to manage
+         object instantialization. Overall, this article was very insightful.
+      </p>
+   </main>
+</body>
+</html>
