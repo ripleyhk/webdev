@@ -136,10 +136,70 @@
       .quote {
          color: #cc2b8c;
       }
+      .calculator__keys { 
+         display: grid; 
+      }
+
+      .calculator {
+        border-radius: 5px;
+        box-shadow: 0 0 40px 0px rgba(0, 0, 0, 0.15);
+        margin-left: auto;
+        margin-right: auto;
+        margin-top: 2em;
+        max-width: 15em;
+        overflow: hidden;
+      }
+
+      .calculator__display {
+        background-color: #222222;
+        color: #fff;
+        font-size: 1.714285714em;
+        padding: 0.5em 0.75em;
+        text-align: right;
+      }
+
+      .calculator__keys {
+        background-color: #999;
+        display: grid;
+        grid-gap: 1px;
+        grid-template-columns: repeat(4, 1fr);
+      }
+
+      .calculator__keys > * {
+        background-color: #fff;
+        padding: 0.5em 1.25em;
+        position: relative;
+        text-align: center;
+      }
+
+      .calculator__keys > *:active::before,
+      .calculator__keys > .is-depressed::before {
+        background-color: rgba(0, 0, 0, 0.2);
+        bottom: 0;
+        box-shadow: 0 0 6px 0 rgba(0, 0, 0, 0.5) inset;
+        content: "";
+        left: 0;
+        opacity: 0.3;
+        position: absolute;
+        right: 0;
+        top: 0;
+        z-index: 1;
+      }
+
+      .key--operator {
+        background-color: #eee;
+      }
+
+      .key--equal {
+        background-image: linear-gradient(to bottom, #cc1d74, #ff33aa);
+        grid-column: -2;
+        grid-row: 2 / span 4;
+      }
       
       
 
     </style>
+    <script defer src ="/scripts/calculator.js"></script>
   </head>
   <body>
     <nav>
@@ -149,7 +209,90 @@
   </nav>
   <main>
       <h1>Blog Post - October 30th, 2020</h1>
-      
+      <p>
+         This week, I followed an article on 
+         <a href="https://www.freecodecamp.org/news/how-to-build-an-html-calculator-app-from-scratch-using-javascript-4454b8714b98/">
+         freeCodeCamp</a>, written by Zell Liew, where I learned how to build
+         an HTML calculator app using JavaScript. 
+      </p>
+      <div class="calculator">
+         <div class="calculator__display">0</div>
+         <div class="calculator__keys">
+           <button class="key--operator" data-action="add">&plus;</button>
+           <button class="key--operator" data-action="subtract">&minus;</button>
+           <button class="key--operator" data-action="multiply">&times;</button>
+           <button class="key--operator" data-action="divide">&divide;</button>
+           <button>7</button>
+           <button>8</button>
+           <button>9</button>
+           <button>4</button>
+           <button>5</button>
+           <button>6</button>
+           <button>1</button>
+           <button>2</button>
+           <button>3</button>
+           <button>0</button>
+           <button data-action="decimal">.</button>
+           <button data-action="clear">AC</button>
+           <button class="key--equal" data-action="calculate">=</button>
+         </div>
+      </div>
+      <p>
+         The calculator itself is composed of two primary pieces: the display and the keys.
+         Each is a class stored inside the calculator class. The display is responsible for
+         displaying the current value entered by the user and the calculation. The keys
+         contains all of the buttons for the calculator.
+      </p>
+      <p>All together, the HTML looks like this:</p>
+      <pre class="code">
+         &lt;div class=&quot;calculator&quot;&gt;
+         &lt;div class=&quot;calculator__display&quot;&gt;0&lt;/div&gt;
+         &lt;div class=&quot;calculator__keys&quot;&gt;
+           &lt;button class=&quot;key--operator&quot; data-action=&quot;add&quot;&gt;&amp;plus;&lt;/button&gt;
+           &lt;button class=&quot;key--operator&quot; data-action=&quot;subtract&quot;&gt;&amp;minus;&lt;/button&gt;
+           &lt;button class=&quot;key--operator&quot; data-action=&quot;multiply&quot;&gt;&amp;times;&lt;/button&gt;
+           &lt;button class=&quot;key--operator&quot; data-action=&quot;divide&quot;&gt;&amp;divide;&lt;/button&gt;
+           &lt;button&gt;7&lt;/button&gt;
+           &lt;button&gt;8&lt;/button&gt;
+           &lt;button&gt;9&lt;/button&gt;
+           &lt;button&gt;4&lt;/button&gt;
+           &lt;button&gt;5&lt;/button&gt;
+           &lt;button&gt;6&lt;/button&gt;
+           &lt;button&gt;1&lt;/button&gt;
+           &lt;button&gt;2&lt;/button&gt;
+           &lt;button&gt;3&lt;/button&gt;
+           &lt;button&gt;0&lt;/button&gt;
+           &lt;button data-action=&quot;decimal&quot;&gt;.&lt;/button&gt;
+           &lt;button data-action=&quot;clear&quot;&gt;AC&lt;/button&gt;
+           &lt;button class=&quot;key--equal&quot; data-action=&quot;calculate&quot;&gt;=&lt;/button&gt;
+         &lt;/div&gt;
+      &lt;/div&gt;
+      </pre>
+      <p>
+         CSS is used to center, color, and position elements. Of course, the keys 
+         are displayed using a grid layout. 
+      </p>
+      <p>
+         The heavy lifting for this project is in the scripting. All functionality
+         is triggered by click Event Listeners. These update the first and second values,
+         set operators, and update the display. After the equal button is pressed, the 
+         calculate function is called to calculate the value. 
+      </p>
+      <p>The calculate function looks like this:</p>
+      <pre class="code">
+const calculate = (n1, operator, n2) =&gt; {
+   const firstNum = parseFloat(n1)
+   const secondNum = parseFloat(n2)
+   if (operator === 'add') return firstNum + secondNum
+   if (operator === 'subtract') return firstNum - secondNum
+   if (operator === 'multiply') return firstNum * secondNum
+   if (operator === 'divide') return firstNum / secondNum
+ }
+      </pre>
+      <p>
+         While relatively simple, this was a very educational project. It enforced both my CSS and
+         JavaScript comprehension, and now I'll never need to Google math ever again!
+      </p>
    </main>
 </body>
 </html>
