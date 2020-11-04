@@ -1,0 +1,296 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <title>Blog Post - November 6th, 2020</title>
+    <link rel="icon" href="/images/pink-bubble.png" type="image/png"
+      sizes="16x16">
+
+    <meta charset="utc-8">
+    <meta name="description" content="Hannah Ripley's blog for CS347 (Web
+      Development)">
+    <meta name="keywords" content="blog, web development, cs347, jmu, james
+      madison university">
+    <meta name="author" content="Hannah Ripley">
+
+    <link href="https://fonts.googleapis.com/css2?family=Roboto&display=swap"
+      rel="stylesheet">
+    <link
+      href="https://fonts.googleapis.com/css2?family=Grandstander:ital,wght@0,100;0,400;0,700;0,900;1,400&display=swap"
+      rel="stylesheet">
+
+    <style>
+      nav {
+        position: sticky;
+        top: 0;
+        display: flex;
+        flex-direction: row;
+
+        padding: 1%;
+        margin: 0;
+        z-index: 1000;
+
+        font-weight: bold;
+        font-family: 'Roboto', sans-serif;
+        background-color: #8F2164;
+      }
+      .nav-link {
+        display: flex;
+        flex-flow: column;
+        justify-content: center;
+
+        margin-left: 5%;
+
+        font-size: large;
+        color: white;
+        text-decoration: none;
+      }
+      .nav-link:hover {
+        color: #f5428a;
+      }
+      .code {
+        padding: 1%;
+        border-radius: 1px;
+        overflow-x: auto;
+        white-space: pre-wrap;
+        white-space: -moz-pre-wrap;
+        white-space: -pre-wrap;
+        white-space: -o-pre-wrap;
+        word-wrap: break-word;
+        width: 65vw;
+        background-color: #de1278;
+        opacity: 0.5;
+        color: white;
+      }
+      body {
+        margin: 0;
+        font-family: 'Roboto', sans-serif;
+        background-image: url(/images/pink-wall.png);
+        background-size: 100% 100%;
+        background-attachment: fixed;
+        background-repeat: no-repeat;
+        background-color: #f0deff;
+        cursor: url(/cursors/white.cur), default;
+      }
+      main {
+        margin: 2%;
+        padding: 2%;
+        width: 80vw;
+        min-height: 75vh;
+        background-color: white;
+        opacity: 0.75;
+        border: #de1278 groove;
+        border-radius: 5px;
+        flex-direction: row;
+        justify-content: space-between;
+      }
+      h1 {
+        color: #8F2164;
+      }
+      h2 {
+        color: #cc2b8c;
+      }
+      h3 {
+         color: #661065;
+         margin-bottom: 0;
+      }
+      a {
+        text-decoration: none;
+        color: #f5428a;
+        cursor: url(/cursors/white.cur), pointer;
+      }
+      a:hover {
+        color: #cf115d;
+      }
+      b {
+        color: #661065;
+      }
+      p {
+        width: 90%;
+      }
+      ul, ol {
+         width: 75%;
+      }
+      li {
+         margin: 2%;
+         margin-top: 0;
+         margin-bottom: 1%;
+         color:  #661065;
+      }
+      .whisper {
+        font-size: smaller;
+        color: lightpink;
+      }
+      .whisper:before {
+        content: "*";
+      }
+      .rating {
+         font-size: 1.0em;
+         font-style: italic;
+         color: #cc2b8c;
+      }
+      .rating-stars {
+         padding: 0;
+         font-style: normal;
+         font-size: 2em;
+         color: goldenrod;
+         font-weight: bold;
+      }
+      .quote {
+         color: #cc2b8c;
+      }
+      .low-contrast {
+         color: #e61082;
+         background-color: #a903fc;
+      }
+      .high-contrast {
+         color: #a81164;
+         background-color: #d5c8db;
+      }
+    </style>
+    <script defer src ="/scripts/calculator.js"></script>
+  </head>
+  <body>
+    <nav>
+      <a class="nav-link" href="/index.html">Home</h1></a>
+      <a class="nav-link" href="/lost.html">Next</a>
+      <a class="nav-link" href="/blog-posts/10-30-2020.html">Prev</a>
+  </nav>
+  <main>
+      <h1>Blog Post - November 6th, 2020</h1>
+      <p>
+         This week I read the article <a 
+         href="https://uxdesign.cc/designing-for-accessibility-is-not-that-hard-c04cc4779d94">
+         "Designing for accessibility is not that hard"</a>, written by Pablo Stanely for UX Collective.
+      </p>
+      <p>Stanely defines digital accessibility as 
+         <span class="quote">
+            "the practice of building digital content and applications that can be 
+            used by a wide range of people, including individuals who have visual, 
+            motor, auditory, speech, or cognitive disabilities."
+         </span>
+      </p>
+      <p>
+         According to Stanley, approximately 20% of Americans have disabilities. 
+         Furthermore, in 2017, there were 814 lawsuits related to website accessibility.
+         As such, digital accessibility is an essential component of good website design. 
+      </p>
+      <p>
+         Stanley lists <b>8 guidelines</b> that developers should follow to assure digital accessibility:
+      </p>
+      <ol>
+         <li><a href="#contrast">Add enough color contrast</a></li>
+         <li><a href="#critical">Don't use color alone to make critical information understandable</a></li>
+         <li><a href="#focus-states">Design usable focus states</a></li>
+         <li><a href="#labels">Use labels or instructions with form fields and inputs</a></li>
+         <li><a href="#alt-text">Write useful alternative text for your images and other non-text content</a></li>
+         <li><a href="#correct-markup">Use correct markup on your content</a></li>
+         <li><a href="#keyboard-nav">Support keyboard navigation</a></li>
+         <li><a href="#beyond">Think beyond</a></li>
+      </ol>
+      <h2 id="contrast">Add enough color contrast</h2>
+      <p>
+         In the pursuit of cool looking color palettes, developers often overlook color contrast.
+         People with low vision have difficulty reading webpages that have low contrast. 
+         According to <a 
+         href="https://www.w3.org/TR/UNDERSTANDING-WCAG20/visual-audio-contrast-contrast.html">
+         W3C</a>, the contrast ratio between the text and background colors should be 
+         <b>at least 4.5 to 1</b>. As the text size becomes larger, this ratio becomes smaller. 
+      </p>
+      <p>
+         We can use the
+         <a href="https://juicystudio.com/services/luminositycontrastratio.php">
+            Luminosity Colour Contrast Ratio Analyser</a> to analyze text and background color contrast.
+      </p>
+      <p><b>Consider the following styling:</b></p>
+      <pre class="code">
+.low-contrast {
+   color: #e61082;
+   background-color: #a903fc;
+}
+.high-contrast {
+   color: #a81164;
+   background-color: #d5c8db;
+}
+      </pre>
+      <p><b>and this content:</b></p>
+      <pre class="code">
+&lt;p class=&quot;low-contrast&quot;&gt;
+   IMPORTANT ANNOUNCEMENT: Please contact your supervisor immediately!
+&lt;/p&gt;
+&lt;p class=&quot;high-contrast&quot;&gt;
+   IMPORTANT ANNOUNCEMENT: Please contact your supervisor immediately!
+&lt;/p&gt;
+      </pre>
+      <p><b>The low-contrast paragraph looks like:</b></p>
+      <p class="low-contrast">
+         IMPORTANT ANNOUNCEMENT: Please contact your supervisor immediately!
+      </p>
+      <p>It's contrast ratio is: <b>1.16:1</b>. This is very low and difficult to read,
+      even for a person with high vision.</p>
+      <p><b>The high-contrast paragraph looks like:</b></p>
+      <p class="high-contrast">
+         IMPORTANT ANNOUNCEMENT: Please contact your supervisor immediately!
+      </p>
+      <p>It's contrast ratio is: <b>4.48:1</b>. This is more than adequate and much easier to read.</p>
+      <h2 id="critical">Don't use color alone to make critical information understandable</h2>
+      <p>
+         Some people have difficulty differentiating between colors. As such,
+         if information is conveyed exclusively through color, those people will have difficulty
+         understanding it.
+      </p>
+      <p>
+         Developers have a myriad of non-color options to help convey information, including but not
+         limited to: text labels, patterns, icons, titles, font weight, text styles, shapes, size,
+         and textures.
+      <p>
+         Try viewing a webpage in black and white to see if a person with low vision could read it.
+      </p>
+      <h2 id="focus-states">Design usable focus states</h2>
+      <p>
+         Focus indicators are style changes and other visual indicators that the user is interacting
+         with an element. For example, when selecting an input field on a form, a border often appears
+         around the element to let the user know that they are typing in that field.
+      </p>
+      <p>
+         Links, form fields, widgets, buttons, and menu items should all be focusable and have focus indicators.
+      </p>
+      <h2 id="labels">Use labels or instructions with form fields and inputs</h2>
+      <p>
+         Developers should not use placeholders as labels for fields. These disappear when the 
+         user begins inputing data, and the text is often low contrast. In addition, screen readers 
+         often utilize labels to navigate a webpage, and nonlabeled text may be skipped over.
+      </p>
+      <p>
+         Instead, developers should use labels to assert that users always have context.
+      </p>
+      <h2 id="alt-text">Write useful alternative text for your images and other non-text content</h2>
+      <p>
+         People with low vision <b>need</b> useful alterntive text to understand non-text content.
+         Developers should always include the "alt" attribute on non-text content.
+      </p>
+      <h2 id="correct-markup">Use correct markup on your content</h2>
+      <p>
+         Correct markup helps everyone. Readers can infer titles, sections, and structure. 
+         Users with screen readers can navigate the webpage with ease. 
+      </p>
+      <p>
+         Proper markup structure assures that the browser creates a correct accessibility tree.
+      </p>
+      <h2 id="keyboard-nav">Support keyboard navigation</h2>
+      <p>
+         Not every user has a mouse. Many people navigate the web using exclusively keyboards and
+         screen readers. 
+      </p>
+      <p>
+         Interactable elements should be navigable in a logical and intuitive way via the keyboard,
+         primarily through use of the <b>tab</b> and <b>enter</b> keys.
+      </p>
+      <h2 id="beyond">Think beyond</h2>
+      <p>
+         Think longer term. Get your products accessed by an accessibility auditor, 
+         have an accessibility expert on hand, and make accessibility an essential
+         component of your design.
+      </p>
+   </main>
+</body>
+</html>
