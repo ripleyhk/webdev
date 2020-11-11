@@ -1,0 +1,230 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <title>Blog Post - November 6th, 2020</title>
+    <link rel="icon" href="/images/pink-bubble.png" type="image/png"
+      sizes="16x16">
+
+    <meta charset="utc-8">
+    <meta name="description" content="Hannah Ripley's blog for CS347 (Web
+      Development)">
+    <meta name="keywords" content="blog, web development, cs347, jmu, james
+      madison university">
+    <meta name="author" content="Hannah Ripley">
+
+    <link href="https://fonts.googleapis.com/css2?family=Roboto&display=swap"
+      rel="stylesheet">
+    <link
+      href="https://fonts.googleapis.com/css2?family=Grandstander:ital,wght@0,100;0,400;0,700;0,900;1,400&display=swap"
+      rel="stylesheet">
+
+    <style>
+      nav {
+        position: sticky;
+        top: 0;
+        display: flex;
+        flex-direction: row;
+
+        padding: 1%;
+        margin: 0;
+        z-index: 1000;
+
+        font-weight: bold;
+        font-family: 'Roboto', sans-serif;
+        background-color: #8F2164;
+      }
+      .nav-link {
+        display: flex;
+        flex-flow: column;
+        justify-content: center;
+
+        margin-left: 5%;
+
+        font-size: large;
+        color: white;
+        text-decoration: none;
+      }
+      .nav-link:hover {
+        color: #f5428a;
+      }
+      .code {
+        padding: 1%;
+        border-radius: 1px;
+        overflow-x: auto;
+        white-space: pre-wrap;
+        white-space: -moz-pre-wrap;
+        white-space: -pre-wrap;
+        white-space: -o-pre-wrap;
+        word-wrap: break-word;
+        width: 65vw;
+        background-color: #de1278;
+        opacity: 0.5;
+        color: white;
+      }
+      body {
+        margin: 0;
+        font-family: 'Roboto', sans-serif;
+        background-image: url(/images/pink-wall.png);
+        background-size: 100% 100%;
+        background-attachment: fixed;
+        background-repeat: no-repeat;
+        background-color: #f0deff;
+        cursor: url(/cursors/white.cur), default;
+      }
+      main {
+        margin: 2%;
+        padding: 2%;
+        width: 80vw;
+        min-height: 75vh;
+        background-color: white;
+        opacity: 0.75;
+        border: #de1278 groove;
+        border-radius: 5px;
+        flex-direction: row;
+        justify-content: space-between;
+      }
+      h1 {
+        color: #8F2164;
+      }
+      h2 {
+        color: #cc2b8c;
+      }
+      h3 {
+         color: #661065;
+         margin-bottom: 0;
+      }
+      a {
+        text-decoration: none;
+        color: #f5428a;
+        cursor: url(/cursors/white.cur), pointer;
+      }
+      a:hover {
+        color: #cf115d;
+      }
+      b {
+        color: #661065;
+      }
+      p {
+        width: 90%;
+      }
+      ul, ol {
+         width: 75%;
+      }
+      li {
+         margin: 2%;
+         margin-top: 0;
+         margin-bottom: 1%;
+         color:  #661065;
+      }
+      .whisper {
+        font-size: smaller;
+        color: lightpink;
+      }
+      .whisper:before {
+        content: "*";
+      }
+      .rating {
+         font-size: 1.0em;
+         font-style: italic;
+         color: #cc2b8c;
+      }
+      .rating-stars {
+         padding: 0;
+         font-style: normal;
+         font-size: 2em;
+         color: goldenrod;
+         font-weight: bold;
+      }
+      .quote {
+         color: #cc2b8c;
+      }
+    </style>
+  </head>
+  <body>
+    <nav>
+      <a class="nav-link" href="/index.html">Home</h1></a>
+      <a class="nav-link" href="/lost.html">Next</a>
+      <a class="nav-link" href="/blog-posts/11-06-2020.html">Prev</a>
+  </nav>
+  <main>
+      <h1>Blog Post - November 13th, 2020</h1>
+      <p>
+         Admittedly, my web development skills still need some polishing,
+         so this week, I read through Emmanuel Ohan's 
+         <a href = "https://www.freecodecamp.org/news/understanding-redux-the-worlds-easiest-guide-to-beginning-redux-c695f45546f6/">
+         "Understanding Redux: The World's Easiest Guide to Beginning Redux"
+         </a> on FreeCodeCamp.org. 
+      </p>
+      <p>
+         According to Ohan, Redux <span class="quote">"helps you write applications that behave consistently."</span>
+         In short, Redux simplifies state management. 
+      </p>
+      <p>
+         Ohan provides an incredibly informative ELI5, comparing Redux to withdrawing money
+         from a bank, complete with vivid illustrations such as the one below:
+      </p>
+      <img src="https://cdn-media-1.freecodecamp.org/images/1*y60iqwOOfQmzPcQhzU8WFA.png" 
+           alt="a bank vault is like a redux store" style ="width:50%; height:auto;">
+      <p>The application state is held in the Redux <b>store</b>.</p>
+      <p>
+         The only way to alter the state is by emitting an <b>action</b>, 
+         an object describing what happened. Below is an action
+         to <b>WITHDRAW $10,0000</b> from the bank:
+      </p>
+      <pre class="code">
+{ 
+  type: "WITHDRAW_MONEY",
+  amount: "$10,000"
+}
+      </pre>
+      <p>
+         Actions always have a <b>type</b> field describing the action. For example,
+         the type above is <b>WITHDRAW_MONEY</b>.
+      </p>
+      <p>
+         The <b>reducer</b> communicates actions to the store via a process called
+         <b>dispatching</b>. According to both Ohan and the official Redux documents,
+         <span class=quote>
+            "Reducers are the most important concept in Redux."
+         </span>
+      </p>
+      <p>
+         Ohan then challenged me to create my magnum opus, a Hello World Redux app. 
+      </p>
+      <p>By the end, I had an App.js that looked like this:</p>
+      <pre class="code">
+import React, { Component } from &quot;react&quot;;
+import HelloWorld from &quot;./HelloWorld&quot;;
+import reducer from &quot;./reducer&quot;;
+import { createStore } from &quot;redux&quot;;  
+
+const initialState = { tech: &quot;React &quot; };
+const store = createStore(reducer, initialState);
+
+class App extends Component {
+  render() {
+    return &lt;HelloWorld tech={store.getState().tech}/&gt;
+  }
+  }
+
+export default App;
+      </pre>
+      <p>And a reducer.js that looked like this:</p>
+      <pre class="code">
+export default (state) =&gt; {
+   return state	
+}
+      </pre>
+      <p>
+        If there's anything I learned from this, it's that I still
+        have plenty to learn. And of course, 
+        <span class=quote>
+          "Reducers are the most important concept in Redux."
+       </span>
+      </p>
+      <img src="https://cdn-media-1.freecodecamp.org/images/1*ZfzLq5UcqweCssO8ulgHHw.png" 
+      alt="Reducers are the most important concept in Redux" style ="width:50%; height:auto;">
+
+   </main>
+</body>
+</html>
